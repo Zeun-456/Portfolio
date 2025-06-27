@@ -1,0 +1,249 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background and fonts */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom, #cbe7f6, #f0f8ff);
+  color: #333;
+  padding: 40px 20px;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 80px; /* space for fixed nav */
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Top navigation */
+.top-nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.nav-btn {
+  background-color: #3b82f6; /* blue */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.8);
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+}
+
+.hero h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 6rem;
+  color: #6a8bc6;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.6rem;
+  color: #4a4a4a;
+  margin-bottom: 30px;
+}
+
+/* Outlined section */
+.outlined-section {
+  background: white;
+  border: 4px dashed #c2d9ff;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 1000px; /* widened layout */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.outlined-section h2 {
+  font-size: 2rem;
+  color: #6a8bc6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Projects */
+.project {
+  background: #f6faff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 0 auto 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  max-width: 900px; /* newly added to center project blocks */
+}
+
+.project h3 {
+  color: #5d79c1;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.project p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Project thumbnail images */
+.project-thumb {
+  width: 100%;
+  max-width: 700px; /* updated for bigger image */
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 16px 36px;
+  background-color: #3b82f6; /* blue */
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 60px;
+}
+
+/* Links */
+a {
+  color: #5d79c1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* About Me section */
+.about-me-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #444;
+  text-align: center;
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .outlined-section,
+  .project {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .project-thumb {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 12px 28px;
+  }
+
+  .nav-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+}
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.social-link img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social-link:hover img {
+  transform: scale(1.2);
+}
+
+#contact a[href^="mailto:"] {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #3b82f6;
+}
